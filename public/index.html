@@ -1,34 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selvam Sarees - Dashboard Login</title>
+
+    <title>Selvam Sarees Dashboard</title>
 
     <link rel="stylesheet" href="styles.css">
+
 </head>
-<body class="login-page">
 
-<div class="login-card">
+<body>
 
-    <h1>Selvam Sarees</h1>
+    <!-- ================= LOGIN ================= -->
 
-    <h2>Contest Dashboard</h2>
+    <div id="loginContainer" class="login-container">
 
-    <input
-        id="password"
-        type="password"
-        placeholder="Enter Password">
+        <div class="login-card">
 
-    <button id="loginButton">
-        Login
-    </button>
+            <h1>Selvam Sarees</h1>
 
-    <p id="error"></p>
+            <p>Contest Dashboard</p>
 
-</div>
+            <input
+                id="password"
+                type="password"
+                placeholder="Enter Password">
 
-<script src="login.js"></script>
+            <button id="loginButton">
+
+                Login
+
+            </button>
+
+            <p id="error"></p>
+
+        </div>
+
+    </div>
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <div id="dashboard" style="display:none;">
+
+        <header>
+
+            <div>
+
+                <h1>Selvam Sarees Dashboard</h1>
+
+                <p>Spin & Win Administration</p>
+
+            </div>
+
+            <button id="refreshButton">
+    🔄 Refresh
+</button>
+
+            <button id="logoutButton">
+
+                Logout
+
+            </button>
+
+        </header>
+
+        <!-- Summary Cards -->
+
+        <section class="summary">
+
+            <div class="card">
+
+                <h3>Total Participants</h3>
+
+                <h2 id="participantCount">0</h2>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Today's Spins</h3>
+
+                <h2 id="todayCount">0</h2>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Last Spin</h3>
+
+                <h2 id="lastSpin">--</h2>
+
+            </div>
+
+        </section>
+
+        <!-- Tabs -->
+
+        <nav class="tabs">
+
+            <button
+                class="tab active"
+                data-tab="participants">
+
+                Participants
+
+            </button>
+
+            <button
+                class="tab"
+                data-tab="prizes">
+
+                Prize Statistics
+
+            </button>
+
+            <button
+                class="tab"
+                data-tab="settings">
+
+                Settings
+
+            </button>
+
+        </nav>
+
+        <!-- Participants -->
+
+        <section
+            id="participantsTab"
+            class="tabContent">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Mobile</th>
+
+                        <th>Prize</th>
+
+                        <th>Coupon</th>
+
+                        <th>Time</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="participantsBody">
+
+                    <tr>
+
+                        <td colspan="4">
+
+                            No data available
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <div class="pagination">
+
+                <button id="previousPage">
+
+                    Previous
+
+                </button>
+
+                <span id="pageNumber">
+
+                    Page 1
+
+                </span>
+
+                <button id="nextPage">
+
+                    Next
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Prize Statistics -->
+
+        <section
+            id="prizesTab"
+            class="tabContent"
+            style="display:none;">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Prize</th>
+
+                        <th>Count</th>
+
+                        <th>Percentage</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="prizeBody">
+
+                    <tr>
+
+                        <td colspan="3">
+
+                            No data available
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- Settings -->
+
+        <section
+            id="settingsTab"
+            class="tabContent"
+            style="display:none;">
+
+            <h2>
+
+                Settings
+
+            </h2>
+
+            <p>
+
+                Dashboard Version 1.0
+
+            </p>
+
+            <p>
+
+                Auto Refresh : 10 Seconds
+
+            </p>
+
+            <button id="logoutButton2">
+
+                Logout
+
+            </button>
+
+        </section>
+
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
 
 </body>
+
 </html>
